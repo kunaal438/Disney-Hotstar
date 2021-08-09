@@ -4,7 +4,6 @@ let sliders = [];
 let slideIndex = 0;
 
 const createSlide = () => {
-    console.log('hello');
     if(slideIndex >= movies.length){
         slideIndex = 0;
     }
@@ -22,7 +21,7 @@ const createSlide = () => {
     p.appendChild(document.createTextNode(movies[slideIndex].des));
     content.appendChild(h1);
     content.appendChild(p);
-    slide.appendChild(imgElement);
+    slide.appendChild(imgElement);   
     slide.appendChild(content);
     carousel.appendChild(slide);
 
@@ -67,6 +66,25 @@ videoCards.forEach (item => {
         video.pause();
     })
 })
+ 
+
+let cardContainers = [...document.querySelectorAll('.card-container')];
+let preBTns = [...document.querySelectorAll('.pre-btn')];
+let nxtBtns = [...document.querySelectorAll('.nxt-btn')];
+
+cardContainers.forEach((item, i) => {
+    let containerDimensions = item.getBoundingClientRect();
+    let containerWidth = containerDimensions.width
+
+    nxtBtns[i].addEventListener('click', () => {
+        item.scrollLeft += containerWidth - 200;
+    })
+
+    preBTns[i].addEventListener('click', () => {
+        item.scrollLeft -= containerWidth + 200;
+    })
+})
+
  
 
 
