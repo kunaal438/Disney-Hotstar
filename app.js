@@ -4,6 +4,7 @@ let sliders = [];
 let slideIndex = 0;
 
 const createSlide = () => {
+    console.log('hello');
     if(slideIndex >= movies.length){
         slideIndex = 0;
     }
@@ -22,6 +23,7 @@ const createSlide = () => {
     content.appendChild(h1);
     content.appendChild(p);
     slide.appendChild(imgElement);
+    slide.appendChild(content);
     carousel.appendChild(slide);
 
     //setting up image
@@ -38,8 +40,7 @@ const createSlide = () => {
     sliders.push(slide);
 
     if(sliders.length){
-        sliders[0].style.marginleft = `calc(-${100 * (sliders.length - 2)}% - ${30 *
-        (sliders.length - 2)}px)`;
+        sliders[0].style.marginleft = `calc(-${100 * (sliders.length - 2)}% - ${30 * (sliders.length - 2)}px)`;
     }
 
 }
