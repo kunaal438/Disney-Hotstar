@@ -173,6 +173,7 @@ body
     z-index: 2;
     background: linear-gradient(to right, #030b17 80%, #0c111b00);
     color: var(--text-color);
+    top: 0;
 }
 
 .movie-title
